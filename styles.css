@@ -1,0 +1,47 @@
+.fish-rating {
+    display: flex;
+    flex-direction: row;
+}
+
+.fish {
+    position: relative;
+    display: inline-block;
+    width: 420px; /* Dimensione del pesce */
+    height: 340px;
+    cursor: pointer;
+}
+
+.fish .empty-fish, .fish .filled-fish {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 320px; /* Assicurati che le icone siano grandi */
+}
+
+.fish .empty-fish {
+    color: gray; /* Pesce vuoto */
+    z-index: 1;
+}
+
+.fish .filled-fish {
+    color: blue; /* Pesce pieno */
+    width: 0%; /* Inizialmente non visibile */
+    overflow: hidden;
+    z-index: 2;
+}
+
+.redfish {
+    color: red !important;
+}
+
+.fish.animate .filled-fish {
+    animation: wiggle 1s;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+    75% { transform: rotate(-15deg); }
+    100% { transform: rotate(0deg); }
+}
